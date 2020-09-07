@@ -50,7 +50,7 @@ async function addMusic (qry, uid) {
   if (!!qry) {
     try {
       const searchResult = await youtubeSearch(qry)
-      const now = dayjs().format('YY/MM/DD HH:mm:ss')
+      const now = dayjs()
 
       await db.ref('queue').push({
         title: searchResult.videos[0].title,
