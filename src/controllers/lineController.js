@@ -64,7 +64,7 @@ async function addMusic (qry, uid) {
       text = `[${searchResult.videos[0].title}] has been add to queue. Sit tight or wait faster!`
     } catch (e) {
       console.error(`[GOT AN ERROR]: ${e.message}`)
-      text = `[GOT AN ERROR]: ${e.message}`
+      text = '[GOT AN ERROR]: oops sorry something wrong pls try again or ask ur host'
     } 
   } else {
     text = 'Pls gimme url, not only command!!'
