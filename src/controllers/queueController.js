@@ -30,7 +30,6 @@ const queueController = {
 
     try {
       const searchResult = await youtubeSearch(query)
-      const now = dayjs()
 
       const insert = await db.ref('queue').push({
         title: searchResult.videos[0].title,
@@ -38,7 +37,7 @@ const queueController = {
         url: searchResult.videos[0].url,
         duration: searchResult.videos[0].seconds,
         addedBy: 'HOST',
-        addedTime: now,
+        addedTime: new Date(),
         status: 'waiting'
       })
 
